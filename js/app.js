@@ -1,5 +1,4 @@
 
-
 function initSend() {
 
     let first = document.getElementById('firstname');
