@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send Email</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script type="module" src="js/tail.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+        integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body>
+
+    <!-- Contact Form -->
+    <div class="lg:w-1/2  p-2 bg-white bg-opacity-10 rounded-xl ml-32">
+        <form class="bg-white rounded-lg p-6 space-y-6">
+            <h2 class="text-3xl md:text-4xl font-extrabold mb-4 text-center">
+                SEND US EMAIL
+            </h2>
+            <h3 class="flex items-center my-8  bg-black">
+                <span aria-hidden="true" class="grow bg-gray-200 rounded h-0.5"></span>
+
+            </h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div class="space-y-1">
+                    <label for="tk-contact-firstname" class="font-medium">First Name</label>
+                    <input
+                        class="block border placeholder-gray-400 px-5 py-3 leading-6 w-full rounded border-gray-200 focus:border-indigo-500 focus:ring focus:ring-indigo-500 focus:ring-opacity-50"
+                        type="text" id="firstname" required />
+
+                    <subiza class="subizanow" id="Firstname"></subiza>
+
+                </div>
+                <div class="space-y-1">
+                    <label for="tk-contact-lastname" class="font-medium">Last Name</label>
+                    <input
+                        class="block border placeholder-gray-400 px-5 py-3 leading-6 w-full rounded border-gray-200 focus:border-indigo-500 focus:ring focus:ring-indigo-500 focus:ring-opacity-50"
+                        type="text" id="lastname" required />
+                    <subiza class="subizanow" id="Lastname"></subiza>
+
+                </div>
+            </div>
+            <div class="space-y-1">
+                <label for="tk-contact-lastname" class="font-medium">Subject </label>
+                <input
+                    class="block border placeholder-gray-400 px-5 py-3 leading-6 w-full rounded border-gray-200 focus:border-indigo-500 focus:ring focus:ring-indigo-500 focus:ring-opacity-50"
+                    type="text" id="subject" min="5" max="70" required />
+                <subiza class="subizanow" id="Subject"></subiza>
+                <p class="text-sm text-red-600 fail" id="fail">
+
+                </p>
+            </div>
+            <div class="space-y-1">
+                <label for="tk-contact-email" class="font-medium">Email</label>
+                <input
+                    class="block border placeholder-gray-400 px-5 py-3 leading-6 w-full rounded border-gray-200 focus:border-indigo-500 focus:ring focus:ring-indigo-500 focus:ring-opacity-50"
+                    type="email" id="email" required />
+                <subiza class="subizanow" id="Email"></subiza>
+
+            </div>
+
+            <div class="space-y-1">
+                <label for="tk-contact-message" class="font-medium">Message</label>
+                <textarea id="message" required
+                    class="block border border-gray-200 rounded placeholder-gray-400 px-5 py-3 w-full focus:border-indigo-500 focus:ring focus:ring-indigo-500 focus:ring-opacity-50"
+                    rows="6"></textarea>
+                <subiza class="subizanow" id="Message"></subiza>
+                <p class="text-sm text-red-600 fail" id="fail">
+
+                </p>
+            </div>
+            <button type="button" id="sendbtn" onclick="initSend()"
+                class="inline-flex justify-center items-center space-x-2 border font-semibold focus:outline-none px-4 py-3 leading-6 rounded border-indigo-700 bg-indigo-700 text-white hover:text-white hover:bg-indigo-800 hover:border-indigo-800 focus:ring focus:ring-indigo-500 focus:ring-opacity-50 active:bg-indigo-700 active:border-indigo-700">
+                <svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"
+                    class="opacity-50 hi-solid hi-paper-airplane inline-block w-5 h-5">
+                    <path
+                        d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z">
+                    </path>
+                </svg>
+                <span>Send Message</span>
+            </button>
+        </form>
+    </div>
+
+    <script src="js/app.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("MKx7PfdQAO7uhbbh8");
+        })();
+    </script>
+</body>
+
+</html>
